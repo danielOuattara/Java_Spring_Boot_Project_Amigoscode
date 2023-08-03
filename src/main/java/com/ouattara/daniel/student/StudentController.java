@@ -4,8 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @RestController
@@ -15,6 +13,8 @@ public class StudentController {
     private final StudentService studentService;
 
     public StudentController(StudentService studentService) {
+        // this.studentService = studentService; // this will NOT work
+        // this.studentService = new StudentService(); // this will work, but avoid this ! Prefer dependency injection
         this.studentService = studentService;
     }
 
